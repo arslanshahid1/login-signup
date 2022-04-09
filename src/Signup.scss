@@ -1,0 +1,189 @@
+    .signup {
+        display: flex;
+        .left {
+            width: 50%;
+            .container {
+                width: 45%;
+                margin: 70px 50px 50px 150px;
+                .title {
+                    font-size: 24px;
+                    color: #344767;
+                    margin-bottom: 15px;
+                }
+                .enter-email {
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #768092;
+                    margin-bottom: 30px;
+                    line-height: 1.6;
+                }
+                form {
+                    .label {
+                        display: inline-block;
+                        font-size: .75rem;
+                        font-weight: 700;
+                        margin-bottom: 0.6rem;
+                        color: #344767;
+                    }
+                    .agree {
+                        position: relative;
+                        padding-left: 35px;
+                        padding-top: 2px;
+                        font-size: 14px;
+                        color: #344767;
+                        cursor: pointer;
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+                        }
+                        .checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 20px;
+                            width: 20px;
+                            border: 1px solid #d2d6da;
+                            background-color: white;
+                            border-radius: 5px;
+                        }
+                        .checkmark:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                        }
+                    }
+                    .agree input:checked~.checkmark {
+                        background-image: linear-gradient(310deg, #141727, #3a416f);
+                    }
+                    .agree input:checked~.checkmark:after {
+                        display: block;
+                    }
+                    .agree .checkmark:after {
+                        left: 6px;
+                        top: 2px;
+                        width: 3px;
+                        height: 8px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                    input {
+                        display: block;
+                        width: 100%;
+                        padding: 0.5rem 0.75rem;
+                        font-size: .875rem;
+                        font-weight: 400;
+                        line-height: 1.4rem;
+                        color: #495057;
+                        border: 1px solid #d2d6da;
+                        border-radius: 6px;
+                        margin-bottom: 1.4rem;
+                    }
+                    input:placeholder {
+                        color: #d2d6da;
+                    }
+                    input:focus {
+                        border-color: #e293d3;
+                        outline: 0;
+                        box-shadow: 0 0 0 2px #e9aede;
+                    }
+                    .send-btn {
+                        background-image: linear-gradient(310deg, #7928ca, #ff0080);
+                        color: white;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
+                        padding: 10px 0;
+                        cursor: pointer;
+                        width: 100%;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    .send-btn:hover {
+                        transform: scale(1.03);
+                    }
+                }
+                .already {
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #768092;
+                    .signin {
+                        font-weight: 600;
+                        color: #cb0c9f;
+                        cursor: pointer;
+                    }
+                }
+                input[type='submit']:hover {
+                    background-color: #141727 !important;
+                }
+            }
+        }
+        .right {
+            position: relative;
+            overflow-x: hidden;
+            width: 50%;
+            height: 100vh;
+            background: linear-gradient(310deg, #7928ca, #ff0080);
+            img.pattern {
+                float: right;
+                height: 100%;
+                opacity: 0.5;
+            }
+            .content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h4 {
+                    margin-top: 30px;
+                    font-size: 1.5rem;
+                }
+                p {
+                    margin-top: 10px;
+                    line-height: 1.6;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width:786px) {
+        .signup {
+            flex-direction: column;
+            .left {
+                width: 100%;
+                .container {
+                    width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            .right {
+                width: 100%;
+                img.rocket {
+                    width: 320px;
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width:787px) and (max-width:990px) {
+        .signup {
+            .right {
+                img.rocket {
+                    width: 390px;
+                }
+            }
+        }
+    }

@@ -1,0 +1,202 @@
+.login {
+    display: flex;
+    .left {
+        width: 50%;
+        .container {
+            width: 45%;
+            margin: 100px 50px 50px 150px;
+            .title {
+                font-size: 24px;
+                color: #344767;
+                margin-bottom: 15px;
+            }
+            .enter-email {
+                font-size: 18px;
+                font-weight: 400;
+                color: #768092;
+                margin-bottom: 30px;
+                line-height: 1.6;
+            }
+            form {
+                .label {
+                    display: inline-block;
+                    font-size: .75rem;
+                    font-weight: 700;
+                    margin-bottom: 0.6rem;
+                    color: #344767;
+                }
+                .toggle {
+                    display: flex;
+                    align-items: center;
+                    .text {
+                        margin-left: 10px;
+                        font-size: 14px;
+                        color: #344767;
+                        cursor: pointer;
+                    }
+                }
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 40px;
+                    height: 20px;
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #eaebec;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                        box-shadow: 0 0 3px #cacaca;
+                    }
+                    .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 16px;
+                        width: 16px;
+                        left: 3px;
+                        bottom: 2px;
+                        background-color: white;
+                        box-shadow: 0 0 2px #7e808a;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+                    input:checked+.slider {
+                        background-color: #141727;
+                        box-shadow: 0 0 4px #7e808a;
+                    }
+                    input:checked+.slider:before {
+                        -webkit-transform: translateX(18px);
+                        -ms-transform: translateX(18px);
+                        transform: translateX(18px);
+                    }
+                    .slider.round {
+                        border-radius: 34px;
+                    }
+                    .slider.round:before {
+                        border-radius: 50%;
+                    }
+                }
+                input {
+                    display: block;
+                    width: 100%;
+                    padding: 0.7rem 0.75rem;
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.4rem;
+                    color: #495057;
+                    border: 1px solid #d2d6da;
+                    border-radius: 6px;
+                    margin-bottom: 1.4rem;
+                }
+                input::placeholder {
+                    color: #bbbbbd;
+                }
+                input:focus {
+                    border-color: #e293d3;
+                    outline: 0;
+                    box-shadow: 0 0 0 2px #e9aede;
+                }
+                .send-btn {
+                    padding: 10px 0;
+                    background-image: linear-gradient(310deg, #7928ca, #ff0080);
+                    color: white;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: all 0.3s ease-in-out;
+                }
+                .send-btn:hover {
+                    transform: scale(1.03);
+                }
+            }
+            .already {
+                font-weight: 400;
+                font-size: 15px;
+                text-align: center;
+                color: #768092;
+                .signin {
+                    font-weight: 600;
+                    color: #cb0c9f;
+                    cursor: pointer;
+                }
+            }
+            input[type='submit']:hover {
+                background-color: #141727 !important;
+            }
+        }
+    }
+    .right {
+        position: relative;
+        overflow-x: hidden;
+        width: 50%;
+        height: 100vh;
+        background: linear-gradient(310deg, #7928ca, #ff0080);
+        img.pattern {
+            float: right;
+            height: 100%;
+            opacity: 0.5;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h4 {
+                margin-top: 30px;
+                font-size: 1.5rem;
+            }
+            p {
+                margin-top: 10px;
+                line-height: 1.6;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:786px) {
+    .login {
+        flex-direction: column;
+        .left {
+            width: 100%;
+            .container {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .right {
+            width: 100%;
+            img.rocket {
+                width: 320px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:787px) and (max-width:990px) {
+    .login {
+        .right {
+            img.rocket {
+                width: 390px;
+            }
+        }
+    }
+}
